@@ -224,15 +224,16 @@ const allowedOrigins = [
   /^https?:\/\/([a-z0-9-]+\.)*career-redefine\.com$/, 
   // New primary domain (Hostinger): allow both www and non-www
   /^https?:\/\/([a-z0-9-]+\.)*careerredefine\.com$/,
+  // Test subdomain (and nested) - allow both http/https (for local proxy testing) and www
+  /^https?:\/\/([a-z0-9-]+\.)*test\.careerredefine\.com$/,
   /^https?:\/\/([a-z0-9-]+\.)*career-redefine\.vercel\.app$/,
   /^https?:\/\/([a-z0-9-]+\.)*career-redefine\.onrender\.com$/,
   
   // Specific production URLs
-  'https://careerredefine.com',
-  'https://www.careerredefine.com',
-  'https://career-redefine.vercel.app',
-  'careerredefine.com',
-  'https://career-redefine.com'
+  'https://test.careerredefine.com',
+  'https://www.test.careerredefine.com',
+  'https://test.career-redefine.vercel.app',
+  'https://test.career-redefine.com'
 ];
 
 // Add FRONTEND_URL if provided
@@ -244,8 +245,12 @@ if (process.env.FRONTEND_URL) {
   }
 }
 
+const allowAllOrigins = String(process.env.CORS_ALLOW_ALL || '').toLowerCase() === 'true';
+
 const corsOptions = {
   origin(origin, callback) {
+    // Allow all origins explicitly when testing is enabled
+    if (allowAllOrigins) return callback(null, true);
     // Allow requests with no origin (like mobile apps or curl requests)
     if (!origin) return callback(null, true);
     
