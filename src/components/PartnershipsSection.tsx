@@ -67,7 +67,7 @@ const PartnershipsSection = () => {
             Trusted by Industry Leaders
           </h2>
           <p className="text-lg text-gray-600">
-            Our accreditations & partnerships with top companies worldwide
+          From Career Redefine to the world’s best companies 
           </p>
         </div>
 

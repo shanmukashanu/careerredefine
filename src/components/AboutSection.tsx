@@ -131,11 +131,11 @@ const AboutSection = () => {
 
             <div className="space-y-6 text-lg text-gray-600 leading-relaxed">
               <p>
-                <span className="font-bold text-green-600">CareerRedefine</span>, backed by prestigious institutions like IIT-M, IIM-A, and HCL, stands as India's premier tech-driven EdTech platform. We specialize in delivering personalized learning experiences in both regional and global languages.
+                <span className="font-bold text-green-600">CareerRedefine</span>, India's premier tech-driven EdTech platform. We specialize in delivering personalized learning experiences in both regional and global languages.
               </p>
 
               <p>
-                With over <span className="font-bold text-blue-600">3M+ learners</span> worldwide, we offer comprehensive online learning programs, professional upskilling opportunities, and dedicated job placement assistance. Our mission is to bridge the skill gap and empower professionals to achieve their career aspirations.
+                With over <span className="font-bold text-blue-600">1000+ learners</span> worldwide, we offer comprehensive online learning programs, professional upskilling opportunities, and dedicated job placement assistance. Our mission is to bridge the skill gap and empower professionals to achieve their career aspirations.
               </p>
 
               <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-6 border border-blue-100">

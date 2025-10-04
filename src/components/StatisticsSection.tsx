@@ -16,10 +16,11 @@ const StatisticsSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   const targetValues = {
-    learners: 3916363,
-    mentors: 194,
-    linesOfCode: 51455295,
-    videos: 1673,
+    learners: 1000,
+    mentors: 20,
+    // 5 Lakhs = 500,000
+    linesOfCode: 500000,
+    videos: 100,
     completionRate: 72,
     conceptRetention: 78,
     topicUnderstanding: 84
@@ -157,7 +158,7 @@ const StatisticsSection = () => {
               <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform group-hover:-translate-y-2">
                 <Users className="w-12 h-12 text-blue-600 mx-auto mb-4" />
                 <div className="text-3xl font-bold text-blue-600 mb-2">
-                  {formatNumber(counters.learners)}
+                  {formatNumber(counters.learners)}+
                 </div>
                 <div className="text-gray-600 font-medium">Learners Worldwide</div>
               </div>
@@ -167,7 +168,7 @@ const StatisticsSection = () => {
               <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform group-hover:-translate-y-2">
                 <BookOpen className="w-12 h-12 text-green-600 mx-auto mb-4" />
                 <div className="text-3xl font-bold text-green-600 mb-2">
-                  {counters.mentors.toLocaleString()}
+                  {counters.mentors.toLocaleString()}+
                 </div>
                 <div className="text-gray-600 font-medium">Expert Mentors</div>
               </div>
@@ -177,7 +178,7 @@ const StatisticsSection = () => {
               <div className="bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform group-hover:-translate-y-2">
                 <Code className="w-12 h-12 text-purple-600 mx-auto mb-4" />
                 <div className="text-3xl font-bold text-purple-600 mb-2">
-                  {formatNumber(counters.linesOfCode)}
+                  {counters.linesOfCode >= 500000 ? '5 Lakhs' : formatNumber(counters.linesOfCode)}
                 </div>
                 <div className="text-gray-600 font-medium">Lines of Code</div>
               </div>
@@ -187,7 +188,7 @@ const StatisticsSection = () => {
               <div className="bg-gradient-to-br from-orange-50 to-orange-100 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform group-hover:-translate-y-2">
                 <Video className="w-12 h-12 text-orange-600 mx-auto mb-4" />
                 <div className="text-3xl font-bold text-orange-600 mb-2">
-                  {counters.videos.toLocaleString()}
+                  {counters.videos.toLocaleString()}+
                 </div>
                 <div className="text-gray-600 font-medium">Learning Videos</div>
               </div>
